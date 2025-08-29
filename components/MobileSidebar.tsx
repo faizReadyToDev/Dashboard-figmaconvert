@@ -1,12 +1,13 @@
 'use client'
 import { Button } from "./ui/button";
+import group from '../public/Group.png'
 
 export default function MobileSidebar({openMenu, setOpenMenu}: {openMenu: boolean; setOpenMenu: (open: boolean) => void}) {
     return (
         <>
         <div className="fixed z-10 bg-black h-screen top-0">
             <div className={`bg-[#11455D] w-[350px] h-screen border-r border-gray-300 p-4 relative ${openMenu ? 'block' : 'hidden'}`}>
-                <img className="mb-4" src="Group.png" alt="" />
+                <img className="mb-4" src={group.src} alt="" />
                 <Button onClick={() => setOpenMenu(false)} className="absolute top-4 right-4 text-[#5DD2DD] cursor-pointer rounded-full border border-white/60 p-4">X</Button>
                 <nav className="mt-10 text-[16px] flex flex-col font-[400] leading-[20px]">
                     <ul>

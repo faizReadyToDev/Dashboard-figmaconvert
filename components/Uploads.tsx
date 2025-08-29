@@ -10,13 +10,17 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { Button } from "./ui/button";
-import img from '../public/Icon-dotted.png'
+import icon from '../public/Icon-dotted.png'
+import search from '../public/search.png'
+import filter from '../public/filter.png'
+import doc from '../public/doc-icon.png'
+import pdf from '../public/pdf-icon.png'
 
 const uploadsData = [
     {
         id: 1,
         size: "200 KB",
-        img: "pdf-icon.png",
+        img: pdf.src,
         name: "Tech requirements.pdf",
         type: "Legal",
         aiAppInclusion: true,
@@ -29,7 +33,7 @@ const uploadsData = [
     {
         id: 2,
         size: "720 KB",
-        img: "pdf-icon.png",
+        img: pdf.src,
         name: "Dashboard screenshot.jpg",
         type: "Vendors & Assets",
         aiAppInclusion: true,
@@ -42,7 +46,7 @@ const uploadsData = [
     {
         id: 3,
         size: "16 MB",
-        img: "doc-icon.png",
+        img: doc.src,
         name: "Dashboard prototype recording.mp4",
         type: "Technology",
         aiAppInclusion: false,
@@ -55,7 +59,7 @@ const uploadsData = [
     {
         id: 4,
         size: "4.2 MB",
-        img: "doc-icon.png",
+        img: doc.src,
         name: "Financial Overview",
         type: "Financial",
         aiAppInclusion: true,
@@ -68,7 +72,7 @@ const uploadsData = [
     {
         id: 5,
         size: "400 KB",
-        img: "doc-icon.png",
+        img: doc.src,
         name: "UX Design Guidelines.docx",
         type: "Legal",
         aiAppInclusion: true,
@@ -81,7 +85,7 @@ const uploadsData = [
     {
         id: 6,
         size: "12 MB",
-        img: "pdf-icon.png",
+        img: pdf.src,
         name: "Dashboard interaction.aep",
         type: "Legal",
         aiAppInclusion: true,
@@ -94,7 +98,7 @@ const uploadsData = [
     {
         id: 7,
         size: "18.6 MB",
-        img: "pdf-icon.png",
+        img: pdf.src,
         name: "Briefing call recording.mp3",
         type: "Financial",
         aiAppInclusion: false,
@@ -117,7 +121,7 @@ export default function Uploads() {
                             <span className="font-[600] text-[14px] text-[#475467] leading-[20px]">Documents that are uploaded by you.</span>
                         </div>
                         <div>
-                             <img className="" src={img.src} alt="" />
+                             <img className="" src={icon.src} alt="" />
                         </div>
                     </div>
                 </div>
@@ -125,7 +129,7 @@ export default function Uploads() {
 
                     <div className="relative">
                         <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-                            <img src="search.png" alt="" />
+                            <img src={search.src} alt="" />
                         </div>
                         <div className="">
                             <Input className="w-[292px] max-sm:w-[200px] max-sm:pl-10 pl-10 text-[#667085]" placeholder="Search here.." />
@@ -133,7 +137,7 @@ export default function Uploads() {
                     </div>
 
                     <Button variant="outline" className="border border-[#EAECF0] flex items-center p-2 rounded-lg gap-2">
-                        <img src="filter.png" alt="" />
+                        <img src={filter.src} alt="" />
                         Filter
                     </Button>
 
