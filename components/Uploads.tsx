@@ -116,7 +116,7 @@ export default function Uploads() {
                             <span className="font-[600] text-[14px] text-[#475467] leading-[20px]">Documents that are uploaded by you.</span>
                         </div>
                         <div>
-                            <img src="icon.png" alt="" />
+                            <img src="icon-dotted.png" alt="" />
                         </div>
                     </div>
                 </div>
