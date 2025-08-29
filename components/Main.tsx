@@ -134,7 +134,7 @@ export default function Main() {
                 </div>
             </div>
             <div>
-                <div className="border border-[#EAECF0] flex flex-col p-4 pb-0 rounded-lg mb-4">
+                <div className="border border-[#EAECF0] flex flex-col p-4 rounded-lg mb-4">
                     <span className="font-[600] mb-4">Total Franchisees Onboard</span>
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex gap-4 items-center">
