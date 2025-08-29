@@ -10,6 +10,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { Button } from "./ui/button";
+import img from '../public/Icon-dotted.png'
 
 const uploadsData = [
     {
@@ -116,7 +117,7 @@ export default function Uploads() {
                             <span className="font-[600] text-[14px] text-[#475467] leading-[20px]">Documents that are uploaded by you.</span>
                         </div>
                         <div>
-                            <img src="/icon-dotted.png" alt="" />
+                             <img className="" src={img.src} alt="" />
                         </div>
                     </div>
                 </div>

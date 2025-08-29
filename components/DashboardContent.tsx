@@ -3,6 +3,7 @@ import Link from "next/link"
 import Main from "./Main"
 import Uploads from "./Uploads"
 import { Button } from "./ui/button"
+import img from './../public/Icon-dotted.png'
 export default function DashboardContent({ setOpenMenu }: { setOpenMenu: (open: boolean) => void }) {
 
 
@@ -11,7 +12,7 @@ export default function DashboardContent({ setOpenMenu }: { setOpenMenu: (open: 
             <nav className="flex p-4 justify-end max-xl:justify-between border border-[#EAECF0] h-[80px] items-center" >
                 <div className="hidden max-xl:block">
                     <Button onClick={() => setOpenMenu(true)} variant="outline" className="p-4 rounded-lg">
-                        <img className="" src="/icon-dotted.png" alt="" />
+                        <img className="" src={img.src} alt="" />
                     </Button>
                 </div>
                 <ul className="flex gap-4 items-center">
