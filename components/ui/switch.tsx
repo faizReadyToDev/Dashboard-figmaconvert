@@ -14,7 +14,7 @@ const Switch = React.forwardRef<
       "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full transition-colors",
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
       "disabled:cursor-not-allowed disabled:opacity-50",
-      "data-[state=checked]:bg-[#2FBDFF] data-[state=unchecked]:bg-gray-300", // ✅ checked = blue, unchecked = gray
+      "data-[state=checked]:bg-[#2FBDFF] data-[state=unchecked]:bg-gray-300", 
       className
     )}
     {...props}
@@ -28,6 +28,6 @@ const Switch = React.forwardRef<
   </SwitchPrimitives.Root>
 ))
 
-Switch.displayName = "Switch" // ✅ fix: must be a string
+Switch.displayName = "Switch"
 
 export { Switch }

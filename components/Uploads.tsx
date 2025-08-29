@@ -121,7 +121,7 @@ export default function Uploads() {
                             <span className="font-[600] text-[14px] text-[#475467] leading-[20px]">Documents that are uploaded by you.</span>
                         </div>
                         <div>
-                             <img className="" src={icon.src} alt="" />
+                            <img className="" src={icon.src} alt="" />
                         </div>
                     </div>
                 </div>
@@ -155,47 +155,47 @@ export default function Uploads() {
                         <div className="whitespace-nowrap"><span className="text-[12px] text-[#475467]">Stage Access</span></div>
                         <div></div>
                     </div>
-                
 
-                {
-                    uploadsData.map((item, index) => (
-                        <div key={index} className={`${item.id === 7 ? "rounded-b-lg" : ""} grid grid-cols-7 gap-4 p-4 border-b border-r border-l border-[#EAECF0] items-center min-w-[1200px]`}>
-                            <div className="col-span-2 ">
-                                <div className="flex items-center gap-2 whitespace-nowrap">
-                                    <Checkbox variant="square" className="border border-black" />
-                                    <img src={item.img} alt="" />
-                                    <div className="flex flex-col">
-                                        <span className="text-[14px] text-[#101828] font-[500] leading-[20px]">{item.name}</span>
-                                        <span className="text-[14px] text-[#475467] font-[400] leading-[20px]"> {item.size}</span>
+
+                    {
+                        uploadsData.map((item, index) => (
+                            <div key={index} className={`${item.id === 7 ? "rounded-b-lg" : ""} grid grid-cols-7 gap-4 p-4 border-b border-r border-l border-[#EAECF0] items-center min-w-[1200px]`}>
+                                <div className="col-span-2 ">
+                                    <div className="flex items-center gap-2 whitespace-nowrap">
+                                        <Checkbox variant="square" className="border border-black" />
+                                        <img src={item.img} alt="" />
+                                        <div className="flex flex-col">
+                                            <span className="text-[14px] text-[#101828] font-[500] leading-[20px]">{item.name}</span>
+                                            <span className="text-[14px] text-[#475467] font-[400] leading-[20px]"> {item.size}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className=" whitespace-nowrap">
-                                <span className={`text-[12px] border ${item.textColor} ${item.borderColor} ${item.bgColor} px-2 rounded-lg font-[500] leading-[18px]`}>{item.type}</span>
-                            </div>
-                            <Switch checked={item.aiAppInclusion} />
-                            <Switch checked={item.dashboardInclusion} />
-                            <div className=" whitespace-nowrap">
-                                <Select>
-                                    <SelectTrigger className="w-[150px]">
-                                        <SelectValue placeholder={item.stageAccess} />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="Full">Full</SelectItem>
-                                        <SelectItem value="Onboarding">Onboarding</SelectItem>
-                                        <SelectItem value="Franchisee">Franchisee</SelectItem>
-                                        <SelectItem value="Prospect">Prospect</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
-                            <div className="flex gap-2  whitespace-nowrap">
+                                <div className=" whitespace-nowrap">
+                                    <span className={`text-[12px] border ${item.textColor} ${item.borderColor} ${item.bgColor} px-2 rounded-lg font-[500] leading-[18px]`}>{item.type}</span>
+                                </div>
+                                <Switch checked={item.aiAppInclusion} />
+                                <Switch checked={item.dashboardInclusion} />
+                                <div className=" whitespace-nowrap">
+                                    <Select>
+                                        <SelectTrigger className="w-[150px]">
+                                            <SelectValue placeholder={item.stageAccess} />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="Full">Full</SelectItem>
+                                            <SelectItem value="Onboarding">Onboarding</SelectItem>
+                                            <SelectItem value="Franchisee">Franchisee</SelectItem>
+                                            <SelectItem value="Prospect">Prospect</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="flex gap-2  whitespace-nowrap">
 
-                                <span className="text-[14px] leading-[20px] text-[#475467] font-[600]">Delete</span>
-                                <span className="text-[14px] leading-[20px] text-[#279DD4] font-[600]">Edit</span>
+                                    <span className="text-[14px] leading-[20px] text-[#475467] font-[600]">Delete</span>
+                                    <span className="text-[14px] leading-[20px] text-[#279DD4] font-[600]">Edit</span>
 
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                 </div>
             </div>
         </>
