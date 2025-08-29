@@ -8,8 +8,8 @@ export default function DashboardContent({ setOpenMenu }: { setOpenMenu: (open: 
 
     return (<>
         <div className="bg-white w-full">
-            <nav className="flex  justify-end max-xl:justify-between border border-[#EAECF0] h-[80px] items-center" >
-                <div className="p-4 hidden max-xl:block">
+            <nav className="flex p-4 justify-end max-xl:justify-between border border-[#EAECF0] h-[80px] items-center" >
+                <div className="hidden max-xl:block">
                     <Button onClick={() => setOpenMenu(true)} variant="outline" className="p-4 rounded-lg">
                         <img className="" src="icon.png" alt="" />
                     </Button>

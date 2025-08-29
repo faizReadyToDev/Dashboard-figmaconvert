@@ -1,6 +1,4 @@
 'use client'
-import { Button } from "@/components/ui/button";
-import { Card, CardTitle } from "@/components/ui/card";
 import Sidebar from "@/components/Sidebar";
 import DashboardContent from "@/components/DashboardContent";
 import MobileSidebar from "@/components/MobileSidebar";
