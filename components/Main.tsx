@@ -13,6 +13,89 @@ import ppl6 from '../public/ppl-6.png'
 import ppl7 from '../public/ppl-7.png'
 import ppl8 from '../public/ppl-8.png'
 
+const stepsCompletedData = [
+    {
+        id: 1,
+        title: "Profile Setup",
+        completed: true
+    },
+    {
+        id: 2,
+        title: "Initial Training",
+        completed: true
+    },
+    {
+        id: 3,
+        title: "Legal Documents",
+        completed: true
+    }
+]
+
+const stepsRemainingData = [
+    {
+        id: 1,
+        title: "Financial Integration",
+        completed: true
+    },
+    {
+        id: 2,
+        title: "Final Review",
+        completed: true
+    }
+]
+
+const FranchiseeStep = [
+    {
+        id: 1,
+        title: "Stage 1 (initial Inquiry)",
+        number: "02",
+        img: cirlce1.src
+    },
+    {
+        id: 2,
+        title: "Stage 2 (Document Submission)",
+        number: "07",
+        img: cirlce2.src
+    },
+    {
+        id: 3,
+        title: "Stage 3 (Training)",
+        number: "05",
+        img: cirlce3.src
+    }
+]
+
+const financialData = [
+    {
+        id: 1,
+        title: "Target",
+        amount: "$500,000"
+    },
+    {
+        id: 2,
+        title: "Current",
+        amount: "$450,000"
+    }
+]
+
+const leadsData = [
+    {
+        id: 1,
+        name: "Wade Warren",
+        img: ppl6.src
+    },
+    {
+        id: 2,
+        name: "Ava Wright",
+        img: ppl7.src
+    },
+    {
+        id: 3,
+        name: "Cody Fisher",
+        img: ppl8.src
+    }
+]
+
 export default function Main() {
     return (
         <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-4 p-4">
@@ -23,46 +106,31 @@ export default function Main() {
                 </div>
                 <div className="flex flex-col gap-[16px] items-start border border-[#EAECF0] p-4 bg-[#F6F7FB] rounded-[8px]">
                     <span className="font-semibold text-[14px] ">Steps Completed</span>
-
-                    <div className="flex w-full justify-between items-center">
-                        <div className="flex items-center gap-2">
-                            <img src={cirlce.src} alt="" />
-                            <Label htmlFor="Profile Setup" className="text-[#455468] text-[14px] leading-[24px] font-[500]">Profile Setup</Label>
-                        </div>
-                        <Checkbox variant="round" checked={true} className="rounded-full " id="Profile Setup" />
-                    </div>
-                    <div className="flex w-full justify-between items-center">
-                        <div className="flex items-center gap-2">
-                            <img src={cirlce.src} alt="" />
-                            <Label htmlFor="Initial Training" className="text-[#455468] text-[14px] leading-[24px] font-[500]">Initial Training</Label>
-                        </div>
-                        <Checkbox variant="round" checked={true} className="rounded-full " id="Initial Training" />
-                    </div>
-                    <div className="flex w-full justify-between items-center">
-                        <div className="flex items-center gap-2">
-                            <img src={cirlce.src} alt="" />
-                            <Label htmlFor="Legal Documents" className="text-[#455468] text-[14px] leading-[24px] font-[500]">Legal Documents</Label>
-                        </div>
-                        <Checkbox variant="round" checked={true} className="rounded-full" id="Legal Documents" />
-                    </div>
+                    {
+                        stepsCompletedData.map((Item, index) => (
+                            <div className="flex w-full justify-between items-center" key={Item.id}>
+                                <div className="flex items-center gap-2">
+                                    <img src={cirlce.src} alt="" />
+                                    <Label htmlFor={Item.title} className="text-[#455468] text-[14px] leading-[24px] font-[500]">{Item.title}</Label>
+                                </div>
+                                <Checkbox variant="round" checked={Item.completed} className="rounded-full " id={Item.title} />
+                            </div>
+                        ))
+                    }
                 </div>
                 <div className="flex flex-col gap-[16px] items-start border border-[#EAECF0] p-4 bg-[#F6F7FB] rounded-[8px]">
                     <span className="font-semibold text-[14px] ">Steps Remaining</span>
-
-                    <div className="flex w-full justify-between items-center">
-                        <div className="flex items-center gap-2">
-                            <img src={cirlce.src} alt="" />
-                            <Label htmlFor="Financial Integration" className="text-[#455468] text-[14px] leading-[24px] font-[500]">Financial Integration</Label>
-                        </div>
-                        <Checkbox variant="round" checked={true} className="rounded-full opacity-25" id="Financial Integration" />
-                    </div>
-                    <div className="flex w-full justify-between items-center">
-                        <div className="flex items-center gap-2">
-                            <img src={cirlce.src} alt="" />
-                            <Label htmlFor="Final Review" className="text-[#455468] text-[14px] leading-[24px] font-[500]">Final Review</Label>
-                        </div>
-                        <Checkbox variant="round" checked={true} className="rounded-full opacity-25" id="Final Review" />
-                    </div>
+                    {
+                        stepsRemainingData.map((item, index) => (
+                            <div className="flex w-full justify-between items-center" key={item.id}>
+                                <div className="flex items-center gap-2">
+                                    <img src={cirlce.src} alt="" />
+                                    <Label htmlFor={item.title} className="text-[#455468] text-[14px] leading-[24px] font-[500]">{item.title}</Label>
+                                </div>
+                                <Checkbox variant="round" checked={item.completed} className="rounded-full opacity-25" id={item.title} />
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
             <div>
@@ -90,28 +158,17 @@ export default function Main() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-[12px] items-start p-4  rounded-[8px]">
-
-                        <div className="flex w-full justify-between items-center">
-                            <div className="flex items-center gap-2">
-                                <img src={cirlce1.src} alt="" />
-                                <Label htmlFor="Profile Setup" className="text-[14px] leading-[20px] font-[500] text-[#475467]">Stage 1 (Initial Inquiry)</Label>
-                            </div>
-                            <span className="text-[18px] font-[600]">02</span>
-                        </div>
-                        <div className="flex w-full justify-between items-center">
-                            <div className="flex items-center gap-2">
-                                <img src={cirlce2.src} alt="" />
-                                <Label htmlFor="Initial Training" className="text-[14px] leading-[20px] font-[500] text-[#475467]">Stage 2 (Document Submission)</Label>
-                            </div>
-                            <span className="text-[18px] font-[600]">07</span>
-                        </div>
-                        <div className="flex w-full justify-between items-center">
-                            <div className="flex items-center gap-2">
-                                <img src={cirlce3.src} alt="" />
-                                <Label htmlFor="Legal Documents" className="text-[14px] leading-[20px] font-[500] text-[#475467]">Stage 3 (Training)</Label>
-                            </div>
-                            <span className="text-[18px] font-[600]">05</span>
-                        </div>
+                        {
+                            FranchiseeStep.map((Item, index) => (
+                                <div className="flex w-full justify-between items-center" key={Item.id}>
+                                    <div className="flex items-center gap-2 ">
+                                        <img className="mt-[0.5px]" src={Item.img} alt="" />
+                                        <Label htmlFor={Item.title} className="text-[14px] leading-[20px] font-[500] text-[#475467]">{Item.title}</Label>
+                                    </div>
+                                    <span className="text-[18px] font-[600]">{Item.number}</span>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className="border border-[#EAECF0] flex flex-col p-4 rounded-lg">
@@ -128,17 +185,15 @@ export default function Main() {
                             </span>
                         </div>
                     </div>
-
                     <div className="flex items-center justify-center gap-4">
-                        <div className="flex flex-col items-center bg-[#F7FAFC] p-4 rounded-lg gap-2">
-                            <span className="text-[#455468] font-[600] text-[14px] leading-[24px]">Target</span>
-                            <span className="text-[#1C222B] font-[600] text-[20px] leading-[38px]">$500,000</span>
-                        </div>
-                        <div className="flex flex-col items-center bg-[#F7FAFC] p-4 rounded-lg gap-2">
-                            <span className="text-[#455468] font-[600] text-[14px] leading-[24px]">Current</span>
-                            <span className="text-[#1C222B] font-[600] text-[20px] leading-[38px]">$450,000</span>
-                        </div>
-
+                        {
+                            financialData.map((item, index) => (
+                                <div key={item.id} className="flex flex-col items-center bg-[#F7FAFC] p-4 rounded-lg gap-2">
+                                    <span className="text-[#455468] font-[600] text-[14px] leading-[24px]">{item.title}</span>
+                                    <span className="text-[#1C222B] font-[600] text-[20px] leading-[38px]">{item.amount}</span>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
@@ -157,7 +212,6 @@ export default function Main() {
                             </span>
                         </div>
                     </div>
-
                     <div className="flex flex-col gap-[16px] items-start border border-[#EAECF0] p-4 bg-[#F6F7FB] rounded-[8px]">
                         <span className="font-[600] text-[14px] text-[#1C222B] leading-[24px]">Feedback</span>
 
@@ -171,30 +225,18 @@ export default function Main() {
                 </div>
                 <div className="border border-[#EAECF0] flex flex-col p-4 rounded-lg">
                     <span className="font-[600] mb-6 leading-[24px] text-[16px]">Prospect Leads</span>
-
-                    <div className="bg-[#F6F7FB] flex justify-between text-[14px] items-center p-2 rounded-lg mb-4">
-                        <div className="flex items-center gap-2">
-                            <img src={ppl6.src} alt="" />
-                            <span className="text-[14px] text-[#475467] leading-[20px] font-[500]">Wade Warren</span>
-                        </div>
-                        <span className="text-[#1C222BB2]/70 font-[500] text-[14px] leading-[20px]">Stage: <span className="text-[#475467]">Initial Inquiry</span></span>
-                    </div>
-                    <div className="bg-[#F6F7FB] flex justify-between text-[14px] items-center p-2 rounded-lg mb-4">
-                        <div className="flex items-center gap-2">
-                            <img src={ppl7.src} alt="" />
-                            <span className="text-[14px] text-[#475467] leading-[20px] font-[500]">Ava Wright</span>
-                        </div>
-                        <span className="text-[#1C222BB2]/70 font-[500] text-[14px] leading-[20px]">Stage: <span className="text-[#475467]">Initial Inquiry</span></span>
-                    </div>
-                    <div className="bg-[#F6F7FB] flex justify-between text-[14px] items-center p-2 rounded-lg">
-                        <div className="flex items-center gap-2">
-                            <img src={ppl8.src} alt="" />
-                            <span className="text-[14px] text-[#475467] leading-[20px] font-[500]">Cody Fisher</span>
-                        </div>
-                        <span className="text-[#1C222BB2]/70 font-[500] text-[14px] leading-[20px]">Stage: <span className="text-[#475467]">Initial Inquiry</span></span>
-                    </div>
+                    {
+                        leadsData.map((item, index) => (
+                            <div key={item.id} className="bg-[#F6F7FB] flex justify-between text-[14px] items-center p-2 rounded-lg mb-4">
+                                <div className="flex items-center gap-2">
+                                    <img src={item.img} alt="" />
+                                    <span className="text-[14px] text-[#475467] leading-[20px] font-[500]">{item.name}</span>
+                                </div>
+                                <span className="text-[#1C222BB2]/70 font-[500] text-[14px] leading-[20px]">Stage: <span className="text-[#475467]">Initial Inquiry</span></span>
+                            </div>
+                        ))
+                    }
                 </div>
-
             </div>
         </div>
     );
