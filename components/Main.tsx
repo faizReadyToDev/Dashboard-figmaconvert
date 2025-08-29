@@ -4,7 +4,7 @@ import { Label } from "./ui/label";
 
 export default function Main() {
     return (
-        <div className="grid grid-cols-3 gap-4 p-4">
+        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-4 p-4">
             <div className="border border-[#EAECF0] flex flex-col gap-4 p-4 rounded-lg ">
                 <div className="flex flex-col justify-center items-center border-b border-[#EAECF0] pb-4">
                     <span className="mb-2 font-[600] text-[16px]">Account Process</span>

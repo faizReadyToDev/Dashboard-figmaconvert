@@ -127,7 +127,7 @@ export default function Uploads() {
                             <img src="search.png" alt="" />
                         </div>
                         <div className="">
-                            <Input className="w-[292px] pl-10 text-[#667085]" placeholder="Search here.." />
+                            <Input className="w-[292px] max-sm:w-[200px] max-sm:pl-10 pl-10 text-[#667085]" placeholder="Search here.." />
                         </div>
                     </div>
 
@@ -137,23 +137,26 @@ export default function Uploads() {
                     </Button>
 
                 </div>
-                <div className="grid grid-cols-7 gap-4 bg-[#F9FAFB] p-4 border-b border-r border-l border-[#EAECF0]">
-                    <div className="col-span-2 flex items-center gap-2">
-                        <Checkbox variant="square" className="border border-black" />
-                        <span className="text-[12px] text-[#475467]">Document Name</span>
+                <div className="max-xl:overflow-x-auto">
+
+                    <div className="grid grid-cols-7 gap-4 bg-[#F9FAFB] p-4 border-b border-r border-l border-[#EAECF0] min-w-[1200px]">
+                        <div className="col-span-2 flex items-center gap-2 whitespace-nowrap">
+                            <Checkbox variant="square" className="border border-black" />
+                            <span className="text-[12px] text-[#475467]">Document Name</span>
+                        </div>
+                        <div className="whitespace-nowrap"><span className="text-[12px] text-[#475467]">Document Type</span></div>
+                        <div className="whitespace-nowrap"><span className="text-[12px] text-[#475467]">AI App Inclusion</span></div>
+                        <div className="whitespace-nowrap"><span className="text-[12px] text-[#475467]">Dashboard Inclusion</span></div>
+                        <div className="whitespace-nowrap"><span className="text-[12px] text-[#475467]">Stage Access</span></div>
+                        <div></div>
                     </div>
-                    <div><span className="text-[12px] text-[#475467]">Document Type</span></div>
-                    <div><span className="text-[12px] text-[#475467]">AI App Inclusion</span></div>
-                    <div><span className="text-[12px] text-[#475467]">Dashboard Inclusion</span></div>
-                    <div><span className="text-[12px] text-[#475467]">Stage Access</span></div>
-                    <div></div>
-                </div>
+                
 
                 {
                     uploadsData.map((item, index) => (
-                        <div key={index} className={`${item.id === 7 ? "rounded-b-lg" : ""} grid grid-cols-7 gap-4 p-4 border-b border-r border-l border-[#EAECF0] items-center`}>
+                        <div key={index} className={`${item.id === 7 ? "rounded-b-lg" : ""} grid grid-cols-7 gap-4 p-4 border-b border-r border-l border-[#EAECF0] items-center min-w-[1200px]`}>
                             <div className="col-span-2 ">
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 whitespace-nowrap">
                                     <Checkbox variant="square" className="border border-black" />
                                     <img src={item.img} alt="" />
                                     <div className="flex flex-col">
@@ -162,12 +165,12 @@ export default function Uploads() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="">
+                            <div className=" whitespace-nowrap">
                                 <span className={`text-[12px] border ${item.textColor} ${item.borderColor} ${item.bgColor} px-2 rounded-lg font-[500] leading-[18px]`}>{item.type}</span>
                             </div>
                             <Switch checked={item.aiAppInclusion} />
                             <Switch checked={item.dashboardInclusion} />
-                            <div>
+                            <div className=" whitespace-nowrap">
                                 <Select>
                                     <SelectTrigger className="w-[150px]">
                                         <SelectValue placeholder={item.stageAccess} />
@@ -180,7 +183,7 @@ export default function Uploads() {
                                     </SelectContent>
                                 </Select>
                             </div>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2  whitespace-nowrap">
 
                                 <span className="text-[14px] leading-[20px] text-[#475467] font-[600]">Delete</span>
                                 <span className="text-[14px] leading-[20px] text-[#279DD4] font-[600]">Edit</span>
@@ -188,6 +191,7 @@ export default function Uploads() {
                             </div>
                         </div>
                     ))}
+                </div>
             </div>
         </>
     );
